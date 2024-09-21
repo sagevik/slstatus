@@ -7,7 +7,8 @@ const unsigned int interval = 1000;
 static const char unknown_str[] = "n/a";
 
 /* maximum output string length */
-#define MAXLEN 2048
+//#define MAXLEN 2048
+#define MAXLEN 4096
 
 /*
  * function            description                     argument (example)
@@ -64,6 +65,8 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	/* function format               argument */
+	{ ram_perc , "  %s%%  ",        NULL },
+	{ battery_perc , " %s%%  ",     "BAT0" },
+	{ datetime, " %s",              "%Y-%m-%d %H:%M" },
 };
