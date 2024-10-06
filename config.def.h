@@ -6,10 +6,9 @@ const unsigned int interval = 1000;
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
 
-/* maximum output string length */
-//#define MAXLEN 2048
-#define MAXLEN 4096
-
+/* maximum command output length */
+#define CMDLEN 128
+ 
 /*
  * function            description                     argument (example)
  *
@@ -65,11 +64,14 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format               argument */
-	{ cat , " %s  ",        	 "/tmp/packageUpdates.tmp"},
-	//{ wifi_perc , " %s%%  ",      "wlp0s20f3"},
-	{ ram_perc , " %s%%  ",         NULL },
-	{ run_command , "%s  ",          "volstat" },
-	{ battery_perc , " %s%%  ",     "BAT0" },
-	{ datetime, " %s",              "%Y-%m-%d %H:%M" },
+	/* function format               argument 			interval	signal */
+	{ run_command , " %s  ",        "checkupdates",        	3600,		-1 },
+	//{ wifi_perc , " %s%%  ",      "wlp0s20f3",			1,		-1 },
+	{ ram_perc , " %s%%  ",         NULL,				10,		-1 },
+	{ run_command , "%s  ",          "volstat",			0,		 5 },
+	{ battery_perc , " %s%%  ",     "BAT0",			30,		-1 },
+	{ datetime, " %s",              "%Y-%m-%d %H:%M",		60,		-1 },
 };
+
+/* maximum output string length */
+#define MAXLEN CMDLEN * LEN(args)
