@@ -65,7 +65,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format               argument 			interval	signal */
-	{ run_command , " %s  ",        "checkupdates",        	3600,		-1 },
+	{ cat , " %s  ",                "/tmp/packageUpdates.tmp",     13,		-1 },
 	//{ wifi_perc , " %s%%  ",      "wlp0s20f3",			1,		-1 },
 	{ ram_perc , " %s%%  ",         NULL,				10,		-1 },
 	{ run_command , "%s  ",          "volstat",			0,		 5 },
