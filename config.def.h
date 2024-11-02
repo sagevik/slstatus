@@ -62,14 +62,17 @@ static const char unknown_str[] = "n/a";
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
+ * glyphs:                                   
  */
 static const struct arg args[] = {
 	/* function format               argument 			interval	signal */
-	{ cat , " %s  ",                "/tmp/packageUpdates.tmp",     13,		-1 },
-	//{ wifi_perc , " %s%%  ",      "wlp0s20f3",			1,		-1 },
+	{ cat , " :  %s  ",            "/tmp/packageUpdates.tmp",     13,		-1 },
+//	{ wifi_perc , " %s%%  ",       "wlp0s20f3",			3,		-1 },
+        { cpu_perc,  " %s%%  ", 	 NULL,				4,		-1 },
 	{ ram_perc , " %s%%  ",         NULL,				10,		-1 },
-	{ run_command , "%s  ",          "volstat",			0,		 5 },
-	{ battery_perc , " %s%%  ",     "BAT0",			30,		-1 },
+	{ run_command , "%s  ",          "volume",			0,		 5 },
+	{ run_command , "%s  ",         "battery",			3,		-1 },
+//	{ battery_perc , " %s%%  ",     "BAT0",			30,		-1 },
 	{ datetime, " %s",              "%Y-%m-%d %H:%M",		60,		-1 },
 };
 
