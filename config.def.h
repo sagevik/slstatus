@@ -62,16 +62,17 @@ static const char unknown_str[] = "n/a";
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
- * glyphs:                                  
+ * glyphs:  °                                 
  */
 static const struct arg args[] = {
-	/* function format               argument                       interval	signal */
-	{ cat , " :  %s  ",            "/tmp/packageUpdates.tmp",     13,		    -1 },
-    { cpu_perc,  " %s%%  ",         NULL,				            4,		    -1 },
-	{ ram_perc , " %s%%  ",         NULL,				            10,		    -1 },
-	{ run_command , "%s  ",          "volume",			            0,		     5 },
-	{ run_command , "%s  ",          "battery",			            3,		    -1 },
-	{ datetime, " %s",              "%Y-%m-%d %H:%M",              60,		    -1 },
+	/* function     format          argument                                   interval     signal */
+	{ cat,          " :  %s  ",   "/tmp/packageUpdates.tmp",                 13,		    -1 },
+    { cpu_perc,     " %s%%  ",     NULL,				                       4,		    -1 },
+    { temp,         " %s°  ",      "/sys/class/thermal/thermal_zone10/temp",  7,		    -1 },
+	{ ram_perc,     " %s%%  ",     NULL,				                       10,		    -1 },
+	{ run_command,  "%s  ",         "volume",			                       0,		     5 },
+	{ run_command,  "%s  ",         "battery",			                       3,		    -1 },
+	{ datetime,     " %s",         "%Y-%m-%d %H:%M",                          60,		    -1 },
 };
 
 /* maximum output string length */
