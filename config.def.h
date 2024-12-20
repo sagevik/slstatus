@@ -66,6 +66,7 @@ static const char unknown_str[] = "";
  */
 static const struct arg args[] = {
 	/* function     format          argument                                   interval     signal */
+	{ cat,          "%s ",          "/tmp/tempstatus",                         0,            5 },
 	{ cat,          " :  %s  ",   "/tmp/packageUpdates",                     8,           -1 },
     { cpu_perc,     " %s%%  ",     NULL,				                       4,		    -1 },
     { temp,         " %s°  ",      "/sys/class/thermal/thermal_zone10/temp",  7,		    -1 },
