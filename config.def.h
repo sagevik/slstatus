@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "";
 
 /* maximum command output length */
 #define CMDLEN 128
@@ -66,7 +66,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function     format          argument                                   interval     signal */
-	{ cat,          " :  %s  ",   "/tmp/packageUpdates.tmp",                 8,           -1 },
+	{ cat,          " :  %s  ",   "/tmp/packageUpdates",                     8,           -1 },
     { cpu_perc,     " %s%%  ",     NULL,				                       4,		    -1 },
     { temp,         " %s°  ",      "/sys/class/thermal/thermal_zone10/temp",  7,		    -1 },
 	{ ram_perc,     " %s%%  ",     NULL,				                       10,		    -1 },
