@@ -67,12 +67,12 @@ static const char unknown_str[] = "";
 static const struct arg args[] = {
 	/* function     format          argument                                   interval     signal */
 	{ cat,          "%s ",          "/tmp/tempstatus",                         0,            5 },
-	{ cat,          " :  %s  ",   "/tmp/packageUpdates",                     8,           -1 },
+	{ cat,          " :  %s  ",   "/tmp/packageUpdates",                     0,            5 },
         { cpu_perc,     " %s%%  ",     NULL,				           4,		-1 },
 	{ temp,         " %s°  ",      "/sys/class/thermal/thermal_zone10/temp",  7,		-1 },
 	{ ram_perc,     " %s%%  ",     NULL,				           10,		-1 },
 	{ run_command,  "%s  ",         "volume",			           0,		 5 },
-	{ run_command,  "%s  ",         "battery",			           9,		-1 },
+	{ run_command,  "%s  ",         "battery",			           25,		-1 },
 	{ datetime,     " %s",         "%Y-%m-%d %H:%M",                          60,		-1 },
 };
 
