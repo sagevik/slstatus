@@ -72,7 +72,7 @@ static const struct arg args[] = {
 	{ temp,         " %s°  ",      "/sys/class/thermal/thermal_zone10/temp",  7,		-1 },
 	{ ram_perc,     " %s%%  ",     NULL,				           10,		-1 },
 	{ run_command,  "%s  ",         "volume",			           0,		 5 },
-	{ run_command,  "%s  ",         "battery",			           25,		-1 },
+	{ run_command,  "%s  ",         "battery --status",			           25,		-1 },
 	{ datetime,     " %s",         "%Y-%m-%d %H:%M",                          60,		-1 },
 };
 
